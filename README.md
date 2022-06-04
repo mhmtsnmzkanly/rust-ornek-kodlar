@@ -1,1 +1,2 @@
-"# rust-ornek-kodlar" 
+# rust-ornek-kodlar
+Rust öğrenirken yazılmış örnekler.
