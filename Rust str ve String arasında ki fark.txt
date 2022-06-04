@@ -1,0 +1,23 @@
+Rust'ta
+str sabit bir uzunluğa sahiptir, program içinde başta oluşturulan bayt'tı sabittir. 
+String ise dinamiktir, boyutu sürekli değişebilir.
+
+trim() fonksiyonu str özeldir.
+replace() fonksiyonu String'e özeldir
+to_string(),into(),to_owned() fonksiyonları ile str, String'e dönüştürülebilir.
+"&" yani referans anahtarı ile String, str'ye dönüştürülebilir.
+
+String'den &str'ye dönüştürürken yapmanız gereken şey
+String değişkenin önüne & eklemektir.
+&str değişkenin üstüne bir String fonksiyonu kullanacaksanız.
+Önce yeni bir değişkende onu String'e çevirmeli ardından
+String'e referans ekleyerek tekrar &str değişkene atamlısınız.
+
+	let mut exp_str: &str = "str example.";
+	let mut exp_string = String::from("string Example.");
+	println!("Before: \n{}\n{}", exp_str, exp_string);
+	
+	let exp_str_rep = exp_str.to_string().replace("str", "&str");
+	exp_str = &exp_str_rep;
+	exp_string = exp_string.replace("string", "String");
+	println!("\nAfter: \n{}\n{}", exp_str, exp_string);	
